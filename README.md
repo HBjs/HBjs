@@ -1,5 +1,3 @@
-#### HB.js aka HorribleBlog - its powerful blog system, to developers by developer
-
 # Quick Start
 
 # Developer Installation
