@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/HBjs/HBjs.git"
-  }
+  },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./tests/*",
     "start" : "node ./index.js"
