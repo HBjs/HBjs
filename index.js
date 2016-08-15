@@ -17,6 +17,6 @@ instance.on('error', function(error){
 });
 
 instance.on('listening', function(){
-    console.log("Server run at 127.0.0.1:" + configs.server.port);
+    console.log("Server running at 127.0.0.1:" + configs.server.port);
     console.log(((configs.general.secure) ? "https://" : "http://") + configs.general.url);
 });
