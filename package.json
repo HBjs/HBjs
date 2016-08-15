@@ -9,13 +9,15 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./tests/*",
-    "start" : "node ./index.js"
+    "start": "node ./index.js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.12",
     "mocha": "^3.0.2",
+    "mocha-lcov-reporter": "^1.2.0",
     "superagent": "^2.1.0"
   },
   "dependencies": {
