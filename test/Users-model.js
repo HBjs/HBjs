@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var Users = require("../../../app/models/Users");
+var Users = require("../app/models/Users");
 
 describe("Users CRUD", function(){
     it("Creating user", function(){

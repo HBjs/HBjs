@@ -8,14 +8,19 @@
     "url": "git://github.com/HBjs/HBjs.git"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./tests/*",
-    "start": "node ./index.js"
+    "test": "./node_modules/mocha/bin/mocha ./test/*",
+    "start": "node ./index.js",
+    "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.12",
+    "istanbul": "^0.4.4",
     "mocha": "^3.0.2",
     "mocha-lcov-reporter": "^1.2.0",
     "superagent": "^2.1.0"

@@ -11,7 +11,7 @@ describe("Check system settings", function(){
     });
 
     describe("Should exist mandatory params", function(){
-        var file = require("../../configs");
+        var file = require("../configs");
 
         it("General", function(){
             expect(file.general.secure).to.be.exist;

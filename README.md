@@ -25,7 +25,7 @@ npm i --development
 Run tests
 
 ```bash
-./node_modules/mocha/bin/mocha ./tests/*
+./node_modules/mocha/bin/mocha ./test/*
 ```
 
 # Configuration
