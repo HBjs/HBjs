@@ -28,6 +28,12 @@ Run tests
 ./node_modules/mocha/bin/mocha ./test/*
 ```
 
+Make coverage
+
+```bash
+npm run coverage
+```
+
 # Configuration
 
 # How it works
