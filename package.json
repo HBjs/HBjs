@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "HB.js - powerful blog system from developer and to developers",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/HBjs/HBjs.git"
+  }
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./tests/*"
+    "test": "./node_modules/mocha/bin/mocha ./tests/*",
+    "start" : "node ./index.js"
   },
   "author": "",
   "license": "MIT",
