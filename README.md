@@ -9,14 +9,14 @@ Status:  **In development**
 # Getting Started
 
 
-production installation
+Production installation
 
 ```bash
 npm i --production
 ```
 
 
-development installation
+Development installation
 
 ```bash
 npm i --development
@@ -25,7 +25,7 @@ npm i --development
 Run tests
 
 ```bash
-./node_modules/mocha/bin/mocha ./test/*
+npm test
 ```
 
 Make coverage
