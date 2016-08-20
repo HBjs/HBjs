@@ -1,0 +1,28 @@
+.page-wrapper{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    overflow-y: hidden;
+    position: relative;
+    float: none;
+}
+
+.header{
+    height: 90px;
+    position: relative;
+    z-index: 9998;
+}
+
+.main-header{
+    border-color: rgba(255,255,255,0.30);
+    background-color: transparent;
+    width: 100%;
+    top: 0;
+    left: auto;
+    position: relative;
+    z-index: 4;
+    border-bottom: 1px solid;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}

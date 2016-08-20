@@ -5,3 +5,5 @@ node_modules
 .idea
 .coveralls.yml
 coverage
+public/src
+public/min
