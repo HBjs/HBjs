@@ -1,0 +1,95 @@
+body{
+    font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
+
+.navbar-material{
+    background: #1b39a8;
+    box-shadow: 0 1px 4px #333;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+.navbar-material .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.collapse.navbar-collapse a{
+    color: #fff;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #ec407a;
+}
+
+.navbar-brand{
+    padding-left: 100px;
+    padding-right: 100px;
+    color:  #ec407a;
+}
+.navbar-brand:hover{
+    color:  #ec407a;
+    opacity: .7;
+}
+.nav>li>a{
+    font-size: 16px;
+}
+
+.navbar-form input{
+    border: none;
+    border-radius: 0;
+    -webkit-transition: background 0s ease-out;
+    -o-transition: background 0s ease-out;
+    transition: background 0s ease-out;
+    float: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#009688), to(#009688)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#009688, #009688), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: -o-linear-gradient(#009688, #009688), -o-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient(#009688, #009688), linear-gradient(#D2D2D2, #D2D2D2);
+    -webkit-background-size: 0 2px, 100% 1px;
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+.navbar-form{
+
+    margin-right: 0;
+    padding: 0 0 0 10px;
+}
+
+.form-control:focus {
+    outline: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ec407a), to(#ec407a)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#ec407a, #ec407a), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: -o-linear-gradient(#ec407a, #ec407a), -o-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient(#ec407a, #ec407a), linear-gradient(#D2D2D2, #D2D2D2);
+    -webkit-background-size: 100% 2px, 100% 1px;
+    background-size: 100% 2px, 100% 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.form-control::-moz-placeholder,
+.form-group .form-control::-moz-placeholder {
+    color: #fff;
+    font-weight: 400;
+}
+.form-control:-ms-input-placeholder,
+.form-group .form-control:-ms-input-placeholder {
+    color: #fff;
+    font-weight: 400;
+}
+.form-control::-webkit-input-placeholder,
+.form-group .form-control::-webkit-input-placeholder {
+    color: #fff;
+    font-weight: 400;
+}
