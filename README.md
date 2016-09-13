@@ -6,8 +6,15 @@ Status:  **In development**
 
 # Overview
 
-# Getting Started
 
+# Requirements
+
+- NodeJS
+- MySQL
+- Redis
+
+
+# Getting Started
 
 Production installation
 
@@ -42,7 +49,7 @@ npm run coverage
 
 - NodeJS
 
-- Express (with Swig, Sequelize, Passport)
+- Express (with Swig, Sequelize, Passport, Redis)
 
 - Angular
 
