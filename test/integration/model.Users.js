@@ -1,7 +1,7 @@
 var chai = require('chai'),
     expect = chai.expect,
     should = chai.should;
-var Users = require("../../app/models/Users");
+var Users = require("../../app/services/Users");
 
 describe("Users CRUD", function(){
 
