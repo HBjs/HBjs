@@ -12,5 +12,5 @@ services:
   - redis-server
 after_script:
   - npm run coverage
-before_install
+before_install:
   - mysql -e 'create database hbjs';
