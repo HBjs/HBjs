@@ -1,5 +1,6 @@
 language: node_js
-sudo: false
+sudo: required
+dist: trusty
 node_js:
   - "node"
   - "iojs"
@@ -10,7 +11,15 @@ node_js:
 services:
   - mysql
   - redis-server
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
 after_script:
   - npm run coverage
 before_install:
-  - mysql -e 'create database hbjs';
+  - mysql -u root -e 'CREATE DATABASE hbjs';
+  - mysql -u root -e "CREATE USER 'hbjs'@'localhost' IDENTIFIED BY 'HBjs123456';"
+  - mysql -u root -e "GRANT ALL ON hbjs.* TO 'makler'@'localhost';"
