@@ -27,10 +27,23 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^3.1.0",
     "consolidate": "^0.14.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "localize": "^0.4.7",
+    "mysql": "^2.11.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
     "q": "^1.4.1",
-    "swig": "^1.4.2"
+    "redis": "^2.6.2",
+    "sequelize": "^3.24.3",
+    "swig": "^1.4.2",
+    "validate": "^3.0.1"
   }
 }

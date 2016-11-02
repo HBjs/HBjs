@@ -23,6 +23,27 @@ describe("Check system settings", function(){
             expect(file.server.port).to.be.exist;
         });
 
+        describe("Auth", function(){
+            it("Google", function(){
+                expect(file.auth.google.key).to.be.exist;
+                expect(file.auth.google.secret).to.be.exist;
+                expect(file.auth.google.callback).to.be.exist;
+            });
+
+            it("Facebook", function(){
+                expect(file.auth.facebook.clientID).to.be.exist;
+                expect(file.auth.facebook.secret).to.be.exist;
+                expect(file.auth.facebook.callback).to.be.exist;
+            });
+
+            it("Twitter", function(){
+                expect(file.auth.twitter.consumerKey).to.be.exist;
+                expect(file.auth.twitter.secret).to.be.exist;
+                expect(file.auth.twitter.callback).to.be.exist;
+            });
+
+        });
+
 
         it("DataBase", function(){
             expect(file.db.host).to.be.exist;
