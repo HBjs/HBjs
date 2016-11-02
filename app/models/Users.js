@@ -76,9 +76,9 @@ function createUser(type, uid, email, firstName, lastName, password){
                 timeCreate : Date.now() / 1000
             }
         ).then(function(data){
-                return deferred.resolve(data);
+                return deferred.resolve(true);
             }).catch(function(err){
-                return deferred.reject();
+                return deferred.reject(err);
             });
     }
 

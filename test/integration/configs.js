@@ -11,12 +11,13 @@ describe("Check system settings", function(){
     });
 
     describe("Should exist mandatory params", function(){
-        var file = require("../configs");
+        var file = require("../../configs");
 
         it("General", function(){
             expect(file.general.secure).to.be.exist;
             expect(file.general.url).to.be.exist;
             expect(file.general.public_dir).to.be.exist;
+            expect(file.general.lang).to.be.exist;
         });
 
         it("Server", function(){
@@ -50,7 +51,7 @@ describe("Check system settings", function(){
             expect(file.db.port).to.be.exist;
             expect(file.db.user).to.be.exist;
             expect(file.db.password).to.be.exist;
-            expect(file.db.name).to.be.exist;
+            expect(file.db.database).to.be.exist;
         });
     });
 });
