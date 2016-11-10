@@ -13,18 +13,18 @@ var express = require('express'),
  * Initialization controllers
  */
 
-var indexController = require('../../controllers/backend/index'),
+var indexController = require('../../controllers/account/index');
+
+/*var indexController = require('../../controllers/backend/index'),
     login = require('../../controllers/backend/login'),
     signIn = require('../../controllers/backend/signIn'),
-    postsController = require('../../controllers/backend/index');
+    postsController = require('../../controllers/backend/index');*/
 
 /**
  * Routes
  */
 
-router.get('/', indexController);
-router.get('/login', login);
-router.get('/signin', signIn);
-router.get('/stories/:id', postsController);
+router.get('/account', indexController);
+router.get('/account/stories/create', indexController);
 
 module.exports = router;

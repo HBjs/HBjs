@@ -1,0 +1,71 @@
+{
+  "Categories" : {
+    "ru" : "Категории"
+  },
+  "Tags" : {
+    "ru" : "Тэги"
+  },
+  "Write" : {
+    "ru" : "Написать"
+  },
+  "Login" : {
+    "ru" : "Войти"
+  },
+  "Search" : {
+    "ru" : "Поиск"
+  },
+  "Lost your password?" : {
+    "ru" : "Забыли пароль?"
+  },
+  "Do not have an account yet?" : {
+    "ru" : "У Вас еще нет аккаунта?"
+  },
+  "Already a Member? Login Here" : {
+    "ru" : "У Вас уже есть аккаунт?"
+  },
+  "Email" : {
+    "ru" : "Email"
+  },
+  "Password" : {
+    "ru" : "Пароль"
+  },
+  "Log In" : {
+    "ru" : "Войти"
+  },
+  "Login" : {
+    "ru" : "Вход"
+  },
+  "Signin" : {
+    "ru" : "Регистрация"
+  },
+  "Sign In" : {
+    "ru" : "Зарегистрироваться"
+  },
+  "OR" : {
+    "ru" : "ИЛИ"
+  },
+  "Continue with" : {
+    "ru" : "Войти с помощью"
+  },
+  "Welcome to my blog!" : {
+    "ru" : "Добро пожаловать в мой блог"
+  },
+  "Incorrect email or password" : {
+    "ru" : "Не верный логин или пароль"
+  },
+  "Internal error. Try later, please" : {
+    "ru" : "Ошибка сервера. Пожалуйста, попробуйте позже"
+  },
+  "Your email was registered! Please, log in" : {
+    "ru" : "Этот адрес уже зарегистрирован!"
+  },
+  "Menu" : {
+    "ru" : "Меню"
+  },
+  "Account" : {
+    "ru" : "Аккаунт"
+  },
+  "Logout" : {
+    "ru" : "Выход"
+  }
+}

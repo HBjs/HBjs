@@ -6,10 +6,12 @@
 
 'use strict';
 
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var passport = require('passport'),
+    GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 var configs = require('../../../configs');
+
+var Users = require("../../services/Users");
 
 var params = {
     clientID: configs.auth.google.key,
@@ -18,11 +20,21 @@ var params = {
 };
 
 passport.use(new GoogleStrategy(params, function(token, tokenSecret, profile, done) {
-        /*console.log(token);
-        console.log(tokenSecret);*/
-        //console.log(profile);
+        Users.findUserBySocialId("google", profile.id).then(function(res){
+            if(res == null){
+                var _name = profile.displayName.split(" "),
+                    firstName = (_name.length == 2) ? _name[0] : profile.displayName,
+                    lastName = (_name.length == 2) ? _name[1] : "";
 
-        done(null, profile.id);
+                Users.createUser("google", profile.id, null, firstName, lastName, null).then(function(_res){
+                    return done(null,_res.id);
+                }, function(err){
+                    return done(null, null);
+                });
+            }else{
+                return done(null, res.id);
+            }
+        });
     }
 ));
 

@@ -1,50 +1,67 @@
-{% extends 'common/layout.swig' %}
+{%
+    set settings_page = {
+        'title' : _('Login'),
+        'description' : '',
+        'keywords' : '',
+        'og_title' : '',
+        'og_description' : ''
+    }
+%}
 
-{% block title %} Login page - Blog {% endblock %}
+
+{% extends 'common/layout.swig' %}
 
 {% block body %}
 <div class="login-block">
 
-    {{  flash }}
+    {% if flash !='' %}
+        <div class="error-block">{{  flash }}</div>
+    {% endif %}
 
     <form class="form-horizontal" method="post" action="/login">
         <div class="form-group">
-            <input type="text" class="form-control form-field" id="email_field" name="email"/>
-            <label for="email_field" class="control-label">Email</label>
+            <input type="text" class="form-control form-field" id="email_field" name="email" required=""/>
+            <label for="email_field" class="control-label">{{ _('Email') }}</label>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control form-field" id="password_field" name="password"/>
-            <label for="password_field" class="control-label">Password</label>
+            <input type="password" class="form-control form-field" id="password_field" name="password" required=""/>
+            <label for="password_field" class="control-label">{{ _('Password') }}</label>
         </div>
 
         <div class="form-group">
-            <input type="submit" class="form-control form-btn" value="Log In"/>
+            <input type="submit" class="form-control form-btn" value="{{ _('Log In') }}"/>
         </div>
 
         <div class="form-group form-links">
-            <a href="/signin">Do not have an account yet? </a>
-            <a href="" class="pull-right">Forgot your password?</a>
+            <a href="/signin">{{ _('Do not have an account yet?') }}</a>
+            <a href="" class="pull-right">{{  _('Lost your password?') }}</a>
         </div>
     </form>
 
     <div class="divider">
-        <div>OR</div>
+        <div>{{ _('OR') }}</div>
     </div>
 
     <div class="social-buttons">
         <a class="btn btn-block social-btn social-btn-fb" href="/auth/facebook">
-            <i class="ion-social-facebook"></i>
-            <span>Continue with Facebook</span>
+            <div>
+                <i class="ion-social-facebook-outline"></i>
+            </div>
+            <span>{{ _('Continue with') }} Facebook</span>
         </a>
 
         <a class="btn btn-block social-btn social-btn-tw" href="/auth/twitter">
-            <i class="ion-social-twitter"></i>
-            <span>Continue with Twitter</span>
+            <div>
+                <i class="ion-social-twitter-outline"></i>
+            </div>
+            <span>{{ _('Continue with') }} Twitter</span>
         </a>
 
         <a class="btn btn-block social-btn social-btn-gl" href="/auth/google">
-            <i class="ion-social-google"></i>
-            <span>Continue with Google</span>
+            <div>
+                <i class="ion-social-google-outline"></i>
+            </div>
+            <span>{{ _('Continue with') }} Google</span>
         </a>
     </div>
 

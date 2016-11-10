@@ -4,7 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock %}</title>
+    <meta name="robots" content="index,follow" />
+
+    <title>{{ settings_page.title }}</title>
+
+    <meta name="description" content="{{ settings_page.description }}" />
+    <meta name="keywords" content="{{ settings_page.keywords }}" />
+
+    <meta property="og:title" content="{{ settings_page.og_title }}"/>
+    <meta property="og:description" content="{{ settings_page.og_description }}"/>
+    <meta property="og:type" content="website"/>
+
+    {#<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon">#}
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic" rel="stylesheet">
@@ -40,19 +52,25 @@
 
             <div class="collapse navbar-collapse" id="main-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">{{  translate('Categories') }} </a></li>
-                    <li><a href="#">{{  translate('Tags') }}</a></li>
-                    <li><a href="#">{{  translate('Write') }}</a></li>
+                    <li><a href="#">{{  _('Categories') }} </a></li>
+                    <li><a href="#">{{  _('Tags') }}</a></li>
+                    <li><a href="#">{{  _('Write') }}</a></li>
                 </ul>
 
 
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="{{  translate('Search') }}">
+                            <input type="text" class="form-control" placeholder="{{  _('Search') }}">
                         </div>
                     </form>
-                    <li><a href="/login">{{  translate('Login') }}</a></li>
+
+                    {% if !isAuth %}
+                        <li><a href="/login">{{  _('Login') }}</a></li>
+                        {% else %}
+                        <li><a href="/account">{{  _('Account') }}</a></li>
+                        <li><a href="/logout">{{  _('Logout') }}</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

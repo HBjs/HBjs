@@ -6,13 +6,8 @@
 
 'use strict';
 
-var IndexRoute = require("./backend/index");
-var PagesRoute = require("./backend/posts");
-var LoginRoute = require("./backend/login");
-var SignInRoute = require("./backend/signIn");
-var googleAuthRoute = require("./auth/googleAuth");
-var twitterAuthRoute = require("./auth/twitterAuth");
-var facebookAuthRoute = require("./auth/facebookAuth");
-var localAuthRoute = require("./auth/localAuth");
+var pagesRoute = require("./backend/index");
+var auth = require("./backend/auth");
+var account = require("./backend/account");
 
-module.exports = [IndexRoute, PagesRoute, LoginRoute, SignInRoute, googleAuthRoute, twitterAuthRoute, facebookAuthRoute, localAuthRoute];
+module.exports = [pagesRoute, auth, account];

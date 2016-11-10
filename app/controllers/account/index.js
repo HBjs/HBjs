@@ -7,9 +7,12 @@
 'use strict';
 
 var IndexController = function(req, res){
-    res.render('signIn', {
-        flash : req.flash('message') || ""
-    });
+    if(req.user){
+        res.render('account/index');
+    }else{
+        res.redirect("/");
+    }
+
 };
 
 module.exports = IndexController;

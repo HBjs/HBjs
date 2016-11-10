@@ -1,6 +1,14 @@
-{% extends 'common/layout.swig' %}
+{%
+    set settings_page = {
+        'title' : _('Welcome to my blog!'),
+        'description' : '',
+        'keywords' : '',
+        'og_title' : '',
+        'og_description' : ''
+    }
+%}
 
-{% block title %} Index page - Blog {% endblock %}
+{% extends 'common/layout.swig' %}
 
 {% block body %}
     <div class="col-md-8">

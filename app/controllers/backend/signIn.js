@@ -6,16 +6,15 @@
 
 'use strict';
 
-var Controller = function (req, res){
+var Controller = function(req, res){
 
     if(!req.user){
-        res.render('login', {
+        res.render('signIn', {
             flash : req.flash('message') || ""
         });
     }else{
         res.redirect("/");
     }
-
 };
 
 module.exports = Controller;
