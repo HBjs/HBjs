@@ -11,7 +11,7 @@
     "test": "./node_modules/mocha/bin/mocha ./test/*",
     "start": "node ./index.js",
     "migrations": "node ./migrations/index.js",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/* && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "MIT",
@@ -45,6 +45,6 @@
     "redis": "^2.6.2",
     "sequelize": "^3.24.3",
     "swig": "^1.4.2",
-    "validate": "^3.0.1"
+    "validator": "^6.1.0"
   }
 }
