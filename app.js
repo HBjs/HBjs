@@ -15,7 +15,8 @@ var express = require('express'),
     RedisStore = require('connect-redis')(session),
     ConnectFlash = require('connect-flash'),
     passport = require('passport'),
-    l12n = require('./app/l12n/module');
+    passport_common = require('./app/common/passport'),
+    L12n = require('./app/l12n/module');
 
 var routes = require("./app/routes/");
 
@@ -36,7 +37,7 @@ app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({ extended: false, limit: '5mb' }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(ConnectFlash());
+app.use(new ConnectFlash());
 
 app.engine('swig', consolidate.swig);
 app.set('view engine', 'swig');
@@ -45,15 +46,16 @@ app.set('views', './app/views');
 app.use(function(req, res, next){ res.set("x-powered-by", "HB.js"); next(); });
 
 
-
 /**
  * L12n initialization
  */
 
-l12n.module().then(function(_){
-    app.locals.translate = _.translate;
-});
+app.locals._ = new L12n().translate;
 
+
+/**
+ * Passport initialization
+ **/
 
 app.use(session({
     store: new RedisStore({ }),
@@ -66,14 +68,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(function(user, done) {
-    return done(null, user);
-});
+passport.serializeUser(passport_common.serialize);
+passport.deserializeUser(passport_common.deserialize);
 
-passport.deserializeUser(function(id, done) {
-    console.log(id);
-    done(null, { id : id});
-});
+app.use(passport_common.userInit(app));
+
+
 
 /**
  * Injection routes

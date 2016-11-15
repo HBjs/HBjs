@@ -11,7 +11,7 @@ var Sequelize = require('sequelize'),
 
 var UserModel = sequelize.define('users', {
     /**
-     * id {Number} autoincrement
+     * {Number} id
      **/
     id: {
         type: Sequelize.INTEGER,
@@ -21,15 +21,20 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * type {String} auth strategy (local, twitter, facebook, google)
+     * auth strategy type (local, twitter, facebook, google)
+     *
+     * {String} type
      **/
     type: {
         type: Sequelize.STRING,
-        comment : 'type auth strategy (local, twitter, facebook, google)'
+        allowNull: false,
+        comment : 'auth strategy type (local, twitter, facebook, google)'
     },
 
     /**
-     * uid {String} social id for auth strategy
+     * social id for auth strategy
+     *
+     * {String} uid
      **/
     uid: {
         type: Sequelize.STRING,
@@ -38,19 +43,23 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * role {Number} user role:
+     * user role:
      * 1 - read only
      * 2 - editor
-     * 3 - account
+     * 3 - admin
+     *
+     * {Number} role
      **/
     role: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        comment : 'social id for auth strategy'
+        comment : 'user role'
     },
 
     /**
-     * email {String} user email (local strategy)
+     * user email (local strategy)
+     *
+     * {String} email
      **/
     email: {
         type: Sequelize.STRING,
@@ -59,7 +68,9 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * firstName {String} user first name
+     * user first name
+     *
+     * {String} firstName
      **/
     firstName: {
         type: Sequelize.STRING,
@@ -68,7 +79,9 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * lastName {String} user last name
+     * user last name
+     *
+     * {String} lastName
      **/
     lastName: {
         type: Sequelize.STRING,
@@ -77,7 +90,9 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * password {String} hashed user password (local strategy)
+     * hashed user password (local strategy)
+     *
+     * {String} password
      **/
     password: {
         type: Sequelize.STRING,
@@ -86,18 +101,24 @@ var UserModel = sequelize.define('users', {
     },
 
     /**
-     * lastAuth {Number} last auth time (TIMESTAMP)
+     * last auth time (TIMESTAMP)
+     *
+     * {Number} lastAuth
      **/
     lastAuth: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         comment : 'last auth time (TIMESTAMP)'
     },
 
     /**
-     * timeCreate {Number} time create (TIMESTAMP)
+     * time create (TIMESTAMP)
+     *
+     * {Number} timeCreate
      **/
     timeCreate: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         comment : 'time create (TIMESTAMP)'
     }
 }, {

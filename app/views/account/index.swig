@@ -69,6 +69,31 @@
                 <i class="ion-gear-b"></i> <span class="sidebar-title">Settings</span>
             </a>
         </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <ul class="nav-sidebar">
+
+        {% if user.role == 3 %}
+        <li>
+            <a href="/users">
+                <i class="ion-person-stalker"></i> <span class="sidebar-title">Users</span>
+            </a>
+        </li>
+        <li>
+            <a href="/tags">
+                <i class="ion-pin"></i> <span class="sidebar-title">Tags</span>
+            </a>
+        </li>
+        <li>
+            <a href="/tags">
+                <i class="ion-settings"></i> <span class="sidebar-title">System setting</span>
+            </a>
+        </li>
+
+        {% endif %}
+
         <li>
             <a href="/logout">
                 <i class="ion-log-out"></i> <span class="sidebar-title">Logout</span>
@@ -78,9 +103,7 @@
 </aside>
 
 <div class="general">
-    <div class="container-fluid" ng-view>
-
-    </div>
+    <div class="container-fluid" ng-view></div>
 </div>
 
 

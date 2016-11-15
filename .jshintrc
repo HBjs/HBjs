@@ -1,0 +1,19 @@
+{
+  "node": true,
+  "strict": true,
+  "asi": true,
+  "plusplus": false,
+  "browser": false,
+  "sub": true,
+  "eqeqeq": false,
+  "bitwise": true,
+  "curly": true,
+  "forin": true,
+  "latedef": false,
+  "noarg": true,
+  "nonew": true,
+  "regexp": true,
+  "undef": true,
+  "unused": true,
+  "mocha": true
+}

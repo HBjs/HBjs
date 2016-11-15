@@ -1,0 +1,26 @@
+<div class="card bordered small">
+    <div class="card-header">
+        <div class="card-title">
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="text" class="form-control flat-input" placeholder="Title"/>
+                </div>
+                <div class="col-md-4">
+                    <div class="pull-right">
+                        <a class="btn btn-info btn-post" href=""><i class="ion-android-cloud-outline"></i> Save</a>
+                        <a class="btn btn-info btn-post" href=""> <i class="ion-paper-airplane"></i> Publish</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="row">
+            <div class="col-md-6 editable-block">
+                <textarea class="md-editor" ng-model="vm.post.content"></textarea>
+            </div>
+            <div class="col-md-6 post generated-content" ng-bind-html="vm.generatedContent"></div>
+        </div>
+    </div>
+</div>

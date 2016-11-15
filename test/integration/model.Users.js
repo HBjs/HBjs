@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var Users = require("../../app/services/Users");
 
-describe("Users CRUD", function(){
+describe("Users", function(){
 
     it("Creating user (Local auth)", function(done){
         Users.createUser("local", null, "tessst@bk.ru", null, null, "123456").then(function(res){
@@ -9,6 +9,13 @@ describe("Users CRUD", function(){
             expect(res).to.be.an('object');
            done();
         }, done);
+    });
+
+    it("Creating user (Local auth) with error", function(done){
+        Users.createUser("local").then(done, function(e){
+            expect(e).to.exist;
+            done();
+        });
     });
 
     it("Creating user (Twitter auth)", function(done){

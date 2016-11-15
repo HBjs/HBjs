@@ -14,14 +14,15 @@ var UserModel = require('../models/Users'),
 var Users = {
 
     /**
-     * @param type {String} type of user (local, twitter, facebook, google)
-     * @param uid {Number} uid user (if type of is twitter, facebook, google)
-     * @param email {String} email user (user login in local case)
-     * @param firstName {String} First Name (twitter, facebook, google)
-     * @param lastName {String} Last Name (twitter, facebook, google)
-     * @param password {String} user password (local)
-     *
      * @description Creating user
+     *
+     * @param {String} type
+     * @param {(Number | null)} uid
+     * @param {(String | null)} email
+     * @param {(String | null)} firstName
+     * @param {(String | null)} lastName
+     * @param {(String | null)} password
+     * @returns {Object}
      *
      **/
 
@@ -40,19 +41,25 @@ var Users = {
         }
 
         function createLocal(email, password){
+            var cryptedPassword;
+
+            try{
+                cryptedPassword = crypto.createHash('md5').update(password).digest("hex");
+            }catch (e){
+                return deferred.reject(e);
+            }
+
             UserModel.create(
                 {
                     type : "local",
                     email : email,
                     role : 1,
-                    password : crypto.createHash('md5').update(password).digest("hex"),
+                    password : cryptedPassword,
                     lastAuth : Date.now() / 1000,
                     timeCreate : Date.now() / 1000
                 }
             ).then(function(data){
                     return deferred.resolve(data);
-                }).catch(function(err){
-                    return deferred.reject(err);
                 });
         }
 
@@ -69,8 +76,6 @@ var Users = {
                 }
             ).then(function(data){
                     return deferred.resolve(data);
-                }).catch(function(err){
-                    return deferred.reject(err);
                 });
         }
 
@@ -78,10 +83,11 @@ var Users = {
     },
 
     /**
-     * @param type {String} type of auth strategy (twitter, facebook, google)
-     * @param id {Number} uid user (twitter, facebook, google)
-     *
      * @description Find user by id (twitter, facebook, google)
+     *
+     * @param {String} type - type of auth strategy (twitter, facebook, google)
+     * @param {Number} id - uid user (twitter, facebook, google)
+     * @returns {(Object | null)}
      *
      **/
 
@@ -103,10 +109,11 @@ var Users = {
     },
 
     /**
-     * @param email {String}
-     * @param password {String}
-     *
      * @description Find user by email
+     *
+     * @param {String} email
+     * @param {String} password
+     * @returns {(Object | null)}
      *
      **/
 
@@ -129,9 +136,10 @@ var Users = {
     },
 
     /**
-     * @param email {String}
-     *
      * @description Find used email
+     *
+     * @param {String} email
+     * @returns {(Object | null)}
      *
      **/
 
@@ -153,22 +161,23 @@ var Users = {
     },
 
     /**
-     * @param id {Number}
-     *
      * @description Getting user by id
+     *
+     * @param {Number} id
+     * @returns {(Object | null)}
      *
      **/
 
     getUserById : function getUserById(id){
         var deferred = Q.defer();
 
-        var conditions = {
-            where : {
-                id:id
+        UserModel.findById(id,
+            {
+                attributes : {
+                    exclude : ["password", "lastAuth", "timeCreate", "email"]
+                }
             }
-        };
-
-        UserModel.findOne(conditions).then(function(res){
+        ).then(function(res){
             deferred.resolve(res);
         });
 

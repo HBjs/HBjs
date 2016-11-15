@@ -1,3 +1,11 @@
+/*!
+ * HB.js
+ * Copyright(c) 2016 HB.js Team
+ * MIT Licensed
+ */
+
+'use strict';
+
 var app = require("./app.js");
 var http = require("http");
 var configs = require("./configs.js");

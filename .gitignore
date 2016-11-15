@@ -5,5 +5,6 @@ node_modules
 .idea
 .coveralls.yml
 coverage
+jshint-reports
 public/themes/*/src
 public/themes/*/min

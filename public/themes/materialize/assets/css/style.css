@@ -351,7 +351,8 @@ footer .copyright:before{
     transition-duration: 0.3s;
 }
 
-.login-block .form-control.form-field:focus + .control-label{
+.login-block .form-control.form-field:focus + .control-label,
+.login-block .form-control.form-field:valid ~ .control-label{
     top: -30px;
     left: 0;
     font-size: 12px;
@@ -412,7 +413,7 @@ footer .copyright:before{
 .login-block .divider div{
     position: relative;
     top: 10px;
-    width: 30px;
+    width: 50px;
     background: rgb(245, 245, 245);
     text-align: center;
     margin: 0 auto;
@@ -422,6 +423,13 @@ footer .copyright:before{
     margin-left: -15px;
     margin-right: -15px;
     margin-bottom: 100px;
+}
+
+.login-block .social-buttons div{
+    display: block;
+    width: 30px;
+    float: left;
+    text-align: center;
 }
 
 .login-block .social-btn{
@@ -435,11 +443,16 @@ footer .copyright:before{
     margin-bottom: 20px;
 }
 
+.login-block .social-btn:hover{
+    opacity: .8;
+}
+
 .login-block .social-btn i{
     font-size: 30px;
 }
 .login-block .social-btn span{
-    vertical-align: super;
+    position: relative;
+    top: 7px;
     padding-left: 10px;
 }
 
@@ -459,4 +472,13 @@ footer .copyright:before{
     border: 1px solid rgba(0,0,0,.6);
     background: #fff;
     color: rgba(0,0,0,.6);
+}
+
+.error-block{
+    padding: 20px;
+    border: 1px solid #E91E63;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 25px;
+    text-align: center;
 }

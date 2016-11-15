@@ -8,8 +8,8 @@ var sequelize = new Sequelize(conf.db.database, conf.db.user, conf.db.password, 
         max: 5,
         min: 0,
         idle: 10000
-    },
-    logging : false
+    }/*,
+    logging : false*/
 });
 
 

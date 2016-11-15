@@ -24,15 +24,21 @@ var passport = {
      * @return {Function}
      **/
     deserialize : function deserealize(id, done){
-        User.getUserById(id).then(function(data){
-            return done(null, {
-                id : data.id,
-                type : data.type,
-                role : data.role,
-                firstName : data.firstName,
-                lastName : data.lastName,
-                email : data.email
-            });
+        User.getUserById(id).then(function(user){
+
+            if(user != null){
+                return done(null, {
+                    id : user.id,
+                    type : user.type,
+                    role : user.role,
+                    firstName : user.firstName,
+                    lastName : user.lastName,
+                    email : user.email
+                });
+            }else{
+                return done(null, null);
+            }
+
         });
     },
 
